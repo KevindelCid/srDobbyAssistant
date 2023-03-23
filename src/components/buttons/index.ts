@@ -1,0 +1,1 @@
+export { StopVoice } from './StopVoice'
