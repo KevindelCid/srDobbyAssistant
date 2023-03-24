@@ -1,1 +1,3 @@
-export { StopVoice } from './StopVoice'
+
+export { Play } from './Play'
+export { Copy } from './Copy'

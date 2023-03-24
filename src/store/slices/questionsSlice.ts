@@ -25,8 +25,8 @@ questions: [
 
   {
     id: "1",
-    question: "Hola",
-    response: "Holis aqui te explico qué onda"
+    question: "¿Como usar esta App?",
+    response: "Escribe lo que desees en el campo de texto en la parte inferior de la pantalla\n presiona el boton que se encuentra a la derecha del campo de texto y espera tu respuesta\nDile a tu asistente algo por medio de audio\npresiona el icono de microfono y empezará a escucharte... adelante di lo que gustes y espera tu respuesta\nDesliza a la derecha o a la izquierda para navegar entre tus interacciones con tu asistente\nPresiona el icono de la bocina para reproducir con voz la respuesta de la pregunta en la que te encuentras"
   }
 
 ]

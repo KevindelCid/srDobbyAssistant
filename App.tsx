@@ -9,7 +9,7 @@ import Voice from '@react-native-voice/voice';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { ActivityIndicator } from 'react-native';
 import { MessageZone } from './src/components/inputs';
-import { StopVoice } from './src/components/buttons';
+
 import { Carrousel } from './src/components/layouts';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useDispatch, useSelector } from 'react-redux';
@@ -220,8 +220,6 @@ export default function App() {
     }
   };
 
-
-
   useEffect(() => {
     requestAudioPermission();
     setTimeout(() => {
@@ -267,7 +265,7 @@ export default function App() {
                 )}
             /> */}
 
-            <Carrousel />
+            <Carrousel isSpeaking={isSpeaking} setIsSpeaking={setIsSpeaking}  />
 
 
 
@@ -288,7 +286,7 @@ export default function App() {
       startRecording={startRecording} />
 
 
-      <StopVoice isSpeaking={isSpeaking} setIsSpeaking={setIsSpeaking} />
+  
 
       {/* <Text>{result}</Text> */}
       <Text style={{ color: "red" }} >{error && "Ha ocurrido un error de conexión, comprueba tu conexión a internet"}</Text>

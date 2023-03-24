@@ -1,3 +1,4 @@
+import { RootState } from '@reduxjs/toolkit/dist/query/core/apiState';
 import React, { useRef } from 'react';
 import {
   SafeAreaView,
@@ -12,27 +13,18 @@ import {
 } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
-
-
-// const questions = [
-//   { question: "Hola", response: "Hola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamonaHola que tal, es un gusto para mi poder responder a tu pregunta, en realidad solo esto demostrando lo que mi creador ha decidido que te diga al momento de que me saludas con un 'Hola' es una cosa asi bien chingona asi bien cool y me dan ganas de apoyar a talentos como este no se que pedos deberia decir aqui asi que me voy a empezar a fumar una historia bien mamona" },
-//   { question: "Cosa", response: "Cosa" },
-//   { question: "Cosa", response: "Cosa" },
-//   { question: "Cosa", response: "Cosa" },
-//   { question: "Cosa", response: "Cosa" },
-//   { question: "Cosa", response: "Cosa" },
-// ]
+import { Copy, Play } from '../buttons';
 
 
 
+interface CarrouselProps {
+  isSpeaking: boolean,
+  setIsSpeaking: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 
 
-
-
-
-const App = () => {
+const App = ({ isSpeaking, setIsSpeaking  }: CarrouselProps) => {
 
   const width = Dimensions.get('window').width;
   const questions = useSelector((state: RootState) => state.questions.questions)
@@ -58,16 +50,24 @@ const App = () => {
             paddingHorizontal: 20
           }}
         >
-          <ScrollView nestedScrollEnabled={true} style={{ paddingTop: 20 }} >
+          <ScrollView 
+            maximumZoomScale={5}
+            
+          nestedScrollEnabled={true} 
+          style={{ paddingTop: 20, }} >
             <Text style={{ textAlign: 'center', fontSize: 30 }}>
               {item.question}
             </Text>
-            <Text style={{ fontSize: 12, textAlign: 'justify' }}>
+            <Text style={{ fontSize: 16, textAlign: 'justify', marginTop: 20 }}>
               {item.response}
             </Text>
-
+          <View style={{ height: 40 }} ></View>
           </ScrollView>
-
+          <View style={{ paddingTop:15, paddingBottom:10, flexDirection: "row", justifyContent:"space-between" }}>
+            <Play text={item.response} isSpeaking={isSpeaking} setIsSpeaking={setIsSpeaking} />
+            <Copy text={item.response} />
+          </View>
+          
         </View>
       )}
     />
