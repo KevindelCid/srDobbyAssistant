@@ -16,7 +16,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { decrement, increment } from './src/store/slices/counterSlice';
 import { addQuestion } from './src/store/slices/questionsSlice';
+import 'react-native-get-random-values'
 import { v4 as uuidv4 } from 'uuid';
+import SplashScreen from 'react-native-splash-screen'
 // import Carousel from 'react-native-reanimated-carousel';
 // import { responsiveScreenHeight } from 'react-native-responsive-dimensions';
 
@@ -39,6 +41,11 @@ export default function App() {
   const [micPermission, setMicPermission] = useState(false)
 
   const sendButtonRef = useRef<TextInput>(null)
+
+
+  useEffect(()=>{
+    SplashScreen.hide();
+  },[])
 
 
   const onTtsStart = () => {
@@ -167,8 +174,10 @@ export default function App() {
       console.log(response.data)
       setGptResponse(response.data)
 
+      const id = uuidv4().toString()
+   
 
-      dispatch(addQuestion([{ id: "2", question: question, response: response.data }]))
+      dispatch(addQuestion([{ id: id, question: question, response: response.data, type: "conversation" }]))
 
       setError("")
       Tts.stop()
